@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor</title>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=u41MqoDTy-S0Dr768ecEf_JkOe1UahSKt7XKPZX0A1JjU2IKA0GiSMQ1FSSKgztcs9EpqAHeOiAhvDVT-qwwT92Nvq7IQIFpQ7xvWYJHU6NZRM12vI3pdrL0XDOnNYdLm7pL-SfSWAG0TwqL3ZVcKocNYMcECAKsrhaxLj5V_CnoaJUrfMCNROvguNbhsOIMXVkRCbqL0yXe0F0P0NNNm4ui-5WI38qH6FiTIwn3b34" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9iYW5kdGVjY29tLW15LnNoYXJlcG9pbnQuY29tL3BlcnNvbmFsL2d1c3Rhdm9fYW9saXZlaXJhX3NwdGVjaF9zY2hvb2wvX2xheW91dHMvMTUvZG93bmxvYWQuYXNweD9VbmlxdWVJZD03ZjkyYzBhZi0xZDhjLTQ0ZTktYjRkMC03MzM4ODgxYjZiZWE"/></head>
+<link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+<style>
+
+    header{
+        text-align: center;
+        background-color: #296CA6;
+        color: #f2f2f2;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        width: 100%;
+        height: 60px;
+        font-size: 2rem;
+        font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+        
+    }
+    body{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin:0;
+        padding:0;
+        background-color: #C6E2EC;
+        font-family: Arial, Helvetica, sans-serif;
+
+
+    }
+    #div_quadrado{
+        width: 40%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 40px;
+        border-top: 10px;
+        background-color: #296CA6;
+        border: 3px solid;
+        border-color:#f2f2f2;
+        border-radius: 10%;
+
+
+    }
+    #div_corpo{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        border-top: 3px solid;
+        margin:0;
+        padding:0;
+        border-color:#f2f2f2;
+    }
+    h3{
+        color: #f2f2f2;
+    }
+    button{
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 12px;
+    }
+    button:active{
+    background-color: #6ACED9;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(0.98);
+    }
+    button:focus {
+    transform: scale(0.95); 
+    background-color: #C9E2E8;  
+    border-color: #C9E2E8;  
+    }
+    button:hover {
+    background-color: #C9E2E8;
+    color: black;
+    }
+
+    #buttons{
+        width: 100%;
+    }
+    #b1{
+        width: 25%;
+        margin-left: 5px;
+        
+    }
+    #b2{
+        width: 25%;
+        margin-left: -3px;
+    }
+    #b3{
+        width: 22%;
+        margin-left: -3px;
+    }
+    #b4{
+        width: 25%;
+        margin-left: -3px;
+    }
+
+    #Me_esconde{
+        background-color:#296CA6 ;
+        color: #f2f2f2;
+        cursor: pointer;
+        border: none;
+        margin-top: 28%;
+    }
+    #Resultado {
+        width: 70%;
+        display: flex;
+        align-items: center; 
+        flex-direction: column;
+        color: #f2f2f2;
+    }
+
+    #div_paragrafo{
+        display: flex;
+        align-items: center;
+    }
+    #ipt_paragrafo {
+      margin-left: 10px;
+      
+    }
+    #ipt_n{
+        color: #f2f2f2;
+    }
+
+    #Button_Converter {
+        flex-direction: column;
+        width: 100%;
+        height: 35px;
+        text-align: center;
+
+
+        
+    }
+    #p1_bases{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        color:#f2f2f2;
+
+    }
+    footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #296CA6; 
+    color: #f2f2f2; 
+    text-align: center; 
+    padding: 10px 0; 
+    }
+
+
+    
+
+</style>
+<body>
+    <header> Conversor <i class='bx bx-sort-alt-2 bx-rotate-90' ></i> Numérico </header>
+        <div id="div_quadrado">
+        <h3> Escolha a base:</h3>
+            <div id="buttons">
+            <button onclick="decimal()" id="b1">Decimal</button>
+            <button onclick="octal()" id="b2">Octal</button>
+            <button onclick="hexadecimal()" id="b3">Hexadecimal</button>
+            <button onclick="binario()" id="b4">Binário</button>
+            </div>
+            <br>
+            <div id="div_corpo"></div>
+            <div id="Resultado"></div>
+        </div>
+        <div id="div_supresa"></div>
+        <button onclick="surpresa()" id="Me_esconde">Futuramente...</button>
+        <footer>By: Gustavo Alves De Oliveira 1CCOA </footer>
+
+        
+</body>
+</html>
+<script>
+    function decimal(){
+        div_corpo.innerHTML =   `<p id=p1_bases><b> Converta o número decimal para as demais bases:</b></p>
+
+                                    <div id="div_paragrafo">
+                                    <p id="ipt_n">Seu número: </p>
+                                    <input type="number"  id="ipt_paragrafo">
+                                    </div>
+
+                                    <button onclick="converterdecimal()" id="Button_Converter">Converter</button>
+                                    
+                                `
+        Resultado.innerHTML = `<br> Octal(8):<br><br><br> Hexadecimal(16): <br><br><br> Binário(2): <br><br> `
+    }
+
+        function converterdecimal(){
+            var Numero = Number(ipt_paragrafo.value);
+
+            Resultado.innerHTML = `<br> Octal(8): ${Numero.toString(8)}<br><br><br> Hexadecimal(16): ${Numero.toString(16)} <br><br><br> Binário(2): ${Numero.toString(2)} <br><br> `;
+
+    }
+
+    function octal() {
+        div_corpo.innerHTML =   `<p id=p1_bases><b> Converta o número octal para as demais bases:</b></p>
+
+                                    <div id="div_paragrafo">
+                                        <p id="ipt_n">Seu número: </p>
+                                        <input type="number" id="ipt_paragrafo">
+                                        </div>
+
+                                        <button onclick="converteroctal()" id="Button_Converter">Converter</button>
+
+                                          
+                                `
+        Resultado.innerHTML = `<br> Decimal(10):<br><br><br> Hexadecimal(16): <br><br><br> Binário(2): <br><br> `
+    }
+
+        function converteroctal(){
+            var Numero = parseInt(ipt_paragrafo.value,8);
+
+            Resultado.innerHTML = `<br> Decimal(10):${Numero.toString(10)}<br><br><br> Hexadecimal(16): ${Numero.toString(16)}<br><br><br> Binário(2): ${Numero.toString(2)}<br><br> `;
+        }
+
+    function hexadecimal(){
+        div_corpo.innerHTML =   `<p id=p1_bases><b> Converta o número hexadecimal para as demais bases:</b></p>
+
+                                        <div id="div_paragrafo">
+                                        <p id="ipt_n">Seu número: </p>
+                                        <input type="text" id="ipt_paragrafo">
+                                        </div>
+
+                                        <button onclick="converterhexadecimal()" id="Button_Converter">Converter</button>
+
+                                          
+                                `
+        Resultado.innerHTML = `<br> Decimal(10): <br><br><br> Octal(8): <br><br><br> Binário(2): <br><br> `
+    }
+
+        function converterhexadecimal(){
+            var Numero = parseInt(ipt_paragrafo.value,16);
+
+            Resultado.innerHTML = `<br> Decimal(10): ${Numero.toString(10)}<br><br><br> Octal(8): ${Numero.toString(8)} <br><br><br> Binário(2): ${Numero.toString(2)} <br><br> `;
+        }
+
+    function binario(){
+        div_corpo.innerHTML =   `<p id=p1_bases><b> Converta o número binário para as demais bases:</b></p>
+
+                                    <div id="div_paragrafo">
+                                    <p id="ipt_n"> Seu número: </p>
+                                    <input type="number" id="ipt_paragrafo">
+                                    </div>
+
+                                    <button onclick="converterbinario()" id="Button_Converter">Converter</button>
+
+                                       
+                                `
+        Resultado.innerHTML = `<br> Decimal(10):<br><br><br> Octal(8): <br><br><br> Hexadecimal(16): <br><br> `
+    }
+
+        function converterbinario(){
+            var Numero = parseInt(ipt_paragrafo.value,2);
+
+            Resultado.innerHTML = `<br> Decimal(10): ${Numero.toString(10)}<br><br><br> Octal(8): ${Numero.toString(8)} <br><br><br> Hexadecimal(16): ${Numero.toString(16)} <br><br> `;
+        }
+
+    function surpresa(){
+        div_supresa.innerHTML = `<img src="https://portalnhandeara.wordpress.com/wp-content/uploads/2013/07/anuncie-aqui.jpg?w=640">`
+    }
+
+</script>
