@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor</title>
+         <link rel="stylesheet" href="con.css">
+</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+
+<body>
+    <header> Conversor <i class='bx bx-sort-alt-2 bx-rotate-90'></i> Numérico </header>
+    <div id="div_quadrado">
+        <h3> Escolha a base:</h3>
+        <div id="buttons">
+            <button onclick="decimal()" id="b1">Decimal</button>
+            <button onclick="octal()" id="b2">Octal</button>
+            <button onclick="hexadecimal()" id="b3">Hexadecimal</button>
+            <button onclick="binario()" id="b4">Binário</button>
+        </div>
+        <br>
+        <div id="div_corpo"></div>
+        <div id="Resultado"></div>
+    </div>
+    <div id="div_supresa"></div>
+    <button onclick="surpresa()" id="Me_esconde">Futuramente...</button>
+    <footer>By: Gustavo Alves De Oliveira 1CCOA </footer>
+
+
+</body>
+
+</html>
+<script>
+    function decimal() {
+        div_corpo.innerHTML = `<p id=p1_bases><b> Converta o número decimal para as demais bases:</b></p>
+
+                                    <div id="div_paragrafo">
+                                    <p id="ipt_n">Seu número: </p>
+                                    <input type="number"  id="ipt_paragrafo">
+                                    </div>
+
+                                    <button onclick="converterdecimal()" id="Button_Converter">Converter</button>
+                                    
+                                `
+        Resultado.innerHTML = `<br> Octal(8):<br><br><br> Hexadecimal(16): <br><br><br> Binário(2): <br><br> `
+    }
+
+    function converterdecimal() {
+        var Numero = Number(ipt_paragrafo.value);
+
+        Resultado.innerHTML = `<br> Octal(8): ${Numero.toString(8)}<br><br><br> Hexadecimal(16): ${Numero.toString(16)} <br><br><br> Binário(2): ${Numero.toString(2)} <br><br> `;
+
+    }
+
+    function octal() {
+        div_corpo.innerHTML = `<p id=p1_bases><b> Converta o número octal para as demais bases:</b></p>
+
+                                    <div id="div_paragrafo">
+                                        <p id="ipt_n">Seu número: </p>
+                                        <input type="number" id="ipt_paragrafo">
+                                        </div>
+
+                                        <button onclick="converteroctal()" id="Button_Converter">Converter</button>
+
+                                          
+                                `
+        Resultado.innerHTML = `<br> Decimal(10):<br><br><br> Hexadecimal(16): <br><br><br> Binário(2): <br><br> `
+    }
+
+    function converteroctal() {
+        var Numero = parseInt(ipt_paragrafo.value, 8);
+
+        Resultado.innerHTML = `<br> Decimal(10):${Numero.toString(10)}<br><br><br> Hexadecimal(16): ${Numero.toString(16)}<br><br><br> Binário(2): ${Numero.toString(2)}<br><br> `;
+    }
+
+    function hexadecimal() {
+        div_corpo.innerHTML = `<p id=p1_bases><b> Converta o número hexadecimal para as demais bases:</b></p>
+
+                                        <div id="div_paragrafo">
+                                        <p id="ipt_n">Seu número: </p>
+                                        <input type="text" id="ipt_paragrafo">
+                                        </div>
+
+                                        <button onclick="converterhexadecimal()" id="Button_Converter">Converter</button>
+
+                                          
+                                `
+        Resultado.innerHTML = `<br> Decimal(10): <br><br><br> Octal(8): <br><br><br> Binário(2): <br><br> `
+    }
+
+    function converterhexadecimal() {
+        var Numero = parseInt(ipt_paragrafo.value, 16);
+
+        Resultado.innerHTML = `<br> Decimal(10): ${Numero.toString(10)}<br><br><br> Octal(8): ${Numero.toString(8)} <br><br><br> Binário(2): ${Numero.toString(2)} <br><br> `;
+    }
+
+    function binario() {
+        div_corpo.innerHTML = `<p id=p1_bases><b> Converta o número binário para as demais bases:</b></p>
+
+                                    <div id="div_paragrafo">
+                                    <p id="ipt_n"> Seu número: </p>
+                                    <input type="number" id="ipt_paragrafo">
+                                    </div>
+
+                                    <button onclick="converterbinario()" id="Button_Converter">Converter</button>
+
+                                       
+                                `
+        Resultado.innerHTML = `<br> Decimal(10):<br><br><br> Octal(8): <br><br><br> Hexadecimal(16): <br><br> `
+    }
+
+    function converterbinario() {
+        var Numero = parseInt(ipt_paragrafo.value, 2);
+
+        Resultado.innerHTML = `<br> Decimal(10): ${Numero.toString(10)}<br><br><br> Octal(8): ${Numero.toString(8)} <br><br><br> Hexadecimal(16): ${Numero.toString(16)} <br><br> `;
+    }
+
+    function surpresa() {
+        div_supresa.innerHTML = `<img src="">`
+    }
+
+</script>
